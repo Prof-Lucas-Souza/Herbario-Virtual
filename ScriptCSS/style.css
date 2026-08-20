@@ -25,36 +25,29 @@ body {
 ========================================= */
 
 header {
-    background-color: #fffee9;
+    width: 100%;
+    min-height: 300px; /* altura mínima para mostrar bem a imagem */
+    background-image: url('../IMG/image\ \(4\).png');
+    background-size: cover;       /* ocupa todo o espaço */
+    background-position: center;    /* centraliza a imagem */
+    background-repeat: no-repeat;   /* evita repetição */
     text-align: center;
-
-    padding: 20px 20px 15px;
-
-    /* Linha verde discreta */
-    border-bottom: 2px solid #dcebd8;
+    position: relative;
+    border-bottom: 2px solid #dcebd8; /* linha verde discreta */
 }
-
 
 /* =========================================
    TÍTULO PRINCIPAL
 ========================================= */
 
 header h1 {
-    font-family: 'Gwendolyn', cursive;
-
-    font-size: 7.5em;
-
-    font-weight: normal;
-
-    text-align: center;
-
-    color: #000000;
-
-    margin: 0;
-
-    line-height: 0.8;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 64px;
+    color: #edfeee;
+    margin: 10px 0;
+    position: relative; /* mantém o texto acima da imagem */
+    z-index: 2;
 }
-
 
 /* =========================================
    TÍTULOS SECUNDÁRIOS
@@ -62,14 +55,10 @@ header h1 {
 
 h2 {
     font-family: 'Cinzel Decorative', serif;
-
     color: rgb(106, 193, 105);
-
     text-align: center;
-
     margin-bottom: 20px;
 }
-
 
 /* =========================================
    NAVEGAÇÃO
@@ -86,68 +75,46 @@ nav {
 nav a {
     position: relative;
     display: inline-block;
-
     padding: 10px 18px;
-
     text-decoration: none;
-
-    color: #000000;
-
     font-family: Arial, sans-serif;
     font-size: 18px;
     font-weight: bold;
-
+    color: #ffffff;
     border-radius: 8px;
-
-    /* Impede que o fundo ultrapasse o botão */
     overflow: hidden;
-
-    /* Mantém o texto acima do efeito */
     z-index: 1;
-
-    /* Transição da cor do texto */
     transition: color 0.4s ease;
+
+    /* sombra verde escura embaixo */
+    box-shadow: 0 4px 0 #2e7d32;
 }
 
-
 /* =========================================
-   FUNDO VERDE ANIMADO
+   FUNDO ANIMADO DOS BOTÕES
 ========================================= */
 
 nav a::before {
     content: "";
-
     position: absolute;
-
     top: 0;
     left: 0;
-
     width: 0;
     height: 100%;
-
-    background-color: rgb(106, 193, 105);
-
+    background-color: #ffffff;
     border-radius: 8px;
-
     z-index: -1;
-
     transition: width 0.4s ease;
 }
 
-
-/* =========================================
-   HOVER
-========================================= */
-
+/* Hover */
 nav a:hover {
-    color: #fffeed;
+    color: #8ebc7b;
 }
-
 
 nav a:hover::before {
     width: 100%;
 }
-
 
 /* =========================================
    CONTEÚDO PRINCIPAL
@@ -155,23 +122,16 @@ nav a:hover::before {
 
 main {
     width: 100%;
-
     max-width: 1200px;
-
     margin: 0 auto;
-
     padding: 25px;
-
     line-height: 1.6;
 }
 
-
 section p {
     margin-bottom: 20px;
-
     text-align: justify;
 }
-
 
 /* =========================================
    DESTAQUES
@@ -179,11 +139,8 @@ section p {
 
 .highlight {
     background-color: rgb(255, 250, 205);
-
     padding: 15px;
-
     border-left: 5px solid rgb(105, 193, 105);
-
     margin: 20px 0;
 }
 
@@ -191,343 +148,146 @@ section p {
    RODAPÉ
 ========================================= */
 
-footer{
-
-    background:#fffee9;
-
-    border-top:2px solid #dcebd8;
-
-    padding:35px 50px;
-
-}
-
-footer > p{
-
-    margin-top:35px;
-
-    text-align:center;
-
-    color:#555;
-
+footer {
+    background: #9FBF7F;
+    border-top: 2px solid #dcebd8;
+    padding: 40px 60px;
+    color: #2f4f2f;
+    font-family:serif;
 }
 
 /* =========================================
-   AGRADECIMENTOS
+   LAYOUT DO RODAPÉ
 ========================================= */
+#ConteudoRodape {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+}
 
-#Agradecimentos h1{
-
-    text-align:center;
-
-    color:rgb(106,193,105);
-
-    margin-bottom:25px;
-
+#Orientacao, #Instituicoes {
+    flex: 1;
+    min-width: 280px; /* garante que não fique muito estreito */
 }
 
 /* =========================================
-   CONTEÚDO DO RODAPÉ
+   TÍTULOS
 ========================================= */
+footer h1 {
+    background: #ffffff;       /* faixa branca atrás */
+    padding: 20px 30px;
+    border-radius: 6px;
+    color: #9FBF7F;
+    font-family: "Cinzel Decorative", serif;
+    font-weight: bold;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 25px;
 
-#ConteudoRodape{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:flex-start;
-
-    gap:80px;
-
+    /* sombra leve para relevo */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-/* =========================================
-   COLUNAS
-========================================= */
-
-#Orientacao,
-#Instituicoes{
-
-    flex:1;
-
+footer h3 {
+    color: #9FBF7F;
+    background: #ffffff;       /* faixa branca atrás */
+    padding: 15px 20px;
+    border-radius: 6px;
+    font-family: "Cinzel Decorative", serif;
+    margin-bottom: 15px;
+    font-weight: 400;
+    font-size: 30px; /* tamanho ajustado */
 }
 
-#Orientacao h3,
-#Instituicoes h3,
-#ProjetoRelacionado h3{
-
-    margin-top:0;
-
-    margin-bottom:20px;
-
-}
-
-/* =========================================
-   ITEM DO RODAPÉ
-========================================= */
-
-.Professor,
-.Instituicao{
-
-    position:relative;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:20px;
-
-    padding:10px 15px;
-
-    margin-bottom:12px;
-
-    border-radius:10px;
-
-    overflow:hidden;
-
-}
-
-/* =========================================
-   ANIMAÇÃO DOS ITENS
-========================================= */
-
-.Professor::before,
-.Instituicao::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-
-    left:0;
-
-    width:0;
-
-    height:100%;
-
-    background:#dff1de;
-
-    transition:width .35s ease;
-
-    z-index:0;
-
-}
-
-.Professor:hover::before,
-.Instituicao:hover::before{
-
-    width:100%;
-
-}
-
-/* =========================================
-   CONTEÚDO DOS ITENS
-========================================= */
-
-.Professor h4,
-.Instituicao h4,
-
-.Professor .Icones,
-.Instituicao .Icones{
-
-    position:relative;
-
-    z-index:2;
-
-    margin:0;
-
+footer h4 {
+    color: #ffffff;
+    font-family: serif;
+    font-weight: 500;
+    font-size: 16px; /* mais equilibrado */
 }
 
 /* =========================================
    ÍCONES
 ========================================= */
-
-.Icones{
-
-    display:flex;
-
-    gap:8px;
-
+.Icones img {
+    width: 28px;
+    margin: 5px;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-footer img{
-
-    width:28px;
-
-    height:28px;
-
-    transition:.25s;
-
-}
-
-footer img:hover{
-
-    transform:scale(1.15);
-
+.Icones img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
 }
 
 /* =========================================
-   PROJETOS RELACIONADOS
+   COPYRIGHT
 ========================================= */
+footer > p {
+    margin-top: 35px;
+    text-align: center;
+    color: #555;
+    font-size: 0.9em;
+}
 
-#ProjetoRelacionado{
-
-    margin-top:35px;
-
+footer::before {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #dcebd8;
+    margin: 0 auto 20px;
+    border-radius: 2px;
 }
 
 /* =========================================
    RESPONSIVIDADE
 ========================================= */
-
-@media (max-width:900px){
-
-    #ConteudoRodape{
-
-        flex-direction:column;
-
-        gap:45px;
-
+@media (max-width: 900px) {
+    #ConteudoRodape {
+        flex-direction: column;
+        gap: 45px;
     }
-
 }
-
-/* =========================================
-   SUBTÍTULOS DO RODAPÉ
-========================================= */
-
-#Agradecimentos h1 {
-    font-family: 'Gwendolyn', cursive;
-
-    font-size: 4em;
-
-    font-weight: normal;
-
-    text-align: center;
-
-    color:rgb(106,193,105);
-
-    margin: 0;
-
-    line-height: 0.8;
-}
-
-#Orientacao h3 {
-    font-family: 'Gwendolyn', cursive;
-
-    font-size: 3em;
-
-    font-weight: normal;
-
-    text-align: center;
-
-    margin: 0;
-
-    line-height: 0.8;
-
-    color:rgb(106,193,105);
-}
-
-#ProjetoRelacionado h3 {
-    font-family: 'Gwendolyn', cursive;
-
-    font-size: 3em;
-
-    font-weight: normal;
-
-    text-align: center;
-
-    color:rgb(106,193,105);
-
-    margin: 0;
-
-    line-height: 0.8;
-}
-
-#Instituicoes h3 {
-    font-family: 'Gwendolyn', cursive;
-
-    font-size: 3em;
-
-    font-weight: normal;
-
-    text-align: center;
-
-    color:rgb(106,193,105);
-
-    margin: 0;
-
-    line-height: 0.8;
-
-    margin-bottom: 10px;
-}
-
-
-/* =========================================
-   RESPONSIVIDADE
-========================================= */
 
 @media (max-width: 700px) {
-
-    /* Navegação */
     nav {
         flex-wrap: wrap;
-
         gap: 15px 25px;
-
         margin-bottom: 25px;
     }
-
 
     nav a {
         font-size: 16px;
     }
 
-
-    /* Título */
     header h1 {
         font-size: 5em;
     }
 
-
-    /* Conteúdo */
     main {
+        font-family: 'Cinzel Decorative', serif;
         padding: 15px;
     }
-
 }
 
-
-/* =========================================
-   RESPONSIVIDADE PARA CELULARES
-========================================= */
-
 @media (max-width: 500px) {
-
     header {
         padding: 20px 15px;
     }
 
-
     nav {
         flex-direction: column;
-
         gap: 12px;
-
         margin-bottom: 25px;
     }
-
 
     nav a {
         font-size: 16px;
     }
 
-
     header h1 {
         font-size: 4.5em;
     }
-
 }
