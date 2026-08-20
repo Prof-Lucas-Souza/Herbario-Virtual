@@ -1,0 +1,96 @@
+/* Container centralizado */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+/* Formulário */
+.login-form {
+    width: 100%;
+    max-width: 400px;
+    background: #ffffff;
+    border: 1px solid #9FBF7F;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.10);
+    text-align: center;
+}
+
+/* Título */
+.login-form h2 {
+    font-family: 'Cinzel Decorative', serif;
+    color: #9FBF7F;
+    margin-bottom: 20px;
+}
+
+/* Rótulos */
+.login-form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+}
+
+/* Campos */
+.login-form input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: .2s;
+}
+.login-form input:focus {
+    outline: none;
+    border-color: #9FBF7F;
+    box-shadow: 0 0 5px rgba(159,191,127,.35);
+}
+
+/* Botões iguais ao cadastro */
+.botoes {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+.botoes button {
+    flex: 1;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    z-index: 1;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    background: #9FBF7F;
+    color: #ffffff;
+    transition: color 0.4s ease;
+}
+.botoes button::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 0; height: 100%;
+    background: #ffffff;
+    border-radius: 10px;
+    z-index: -1;
+    transition: width 0.4s ease;
+}
+.botoes button:hover {
+    color: #9FBF7F;
+}
+.botoes button:hover::before {
+    width: 100%;
+}
+
+/* Mensagem */
+.msg {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
