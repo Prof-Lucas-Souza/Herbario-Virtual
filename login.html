@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Freesia</title>
+    <link rel="icon" type="image/png" href="./IMG/faviconfreesiaroxo.png">
+    <link rel="stylesheet" href="./ScriptCSS/style.css">
+    <link rel="stylesheet" href="./ScriptCSS/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre o Projeto</a>
+            <a href="consultapublica.html">Consulta Pública</a>
+            <a href="cadastro.html">Cadastro de Coleta</a>
+            <a href="perfil.html">Perfil</a>
+            <a href="login.html" class="ativo">Login</a>
+        </nav>
+    </header>
+
+    <main class="login-container">
+        <form class="login-form" action="perfil.html" method="post">
+            <h2>Login</h2>
+
+            <label for="usuario">Usuário</label>
+            <input type="text" id="usuario" name="usuario" placeholder="Digite seu usuário" required>
+
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+
+            <div class="botoes">
+                <button type="submit">Entrar</button>
+                <button type="reset">Limpar</button>
+            </div>
+
+            <p class="msg">Acesse seu perfil para visualizar suas informações.</p>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Herbário Virtual Freesia</p>
+    </footer>
+</body>
+</html>

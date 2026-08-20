@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="icon" type="image/png" href="./IMG/faviconfreesiaroxo.png">
+    <meta charset="UTF-8">
+    <title>Perfil - Freesia</title>
+    <link rel="stylesheet" href="./ScriptCSS/style.css">
+    <link rel="stylesheet" href="./ScriptCSS/perfil.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gwendolyn&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Gravitas+One&family=Gwendolyn:wght@400;700&family=Henny+Penny&family=Mea+Culpa&family=Oi&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre o Projeto</a>
+            <a href="consultapublica.html">Consulta Pública</a>
+            <a href="cadastro.html">Cadastro de Coleta</a>
+            <a href="perfil.html" class="ativo">Perfil</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- Informações pessoais -->
+        <aside class="info-pessoal">
+            <!-- Container circular com borda verde -->
+            <div class="foto-container">
+                <!-- Imagem só aparece se for carregada -->
+                <img id="preview" src="" alt="Foto do pesquisador">
+            </div>
+
+            <!-- Botão de upload estilizado -->
+            <input type="file" id="fotoPerfil" accept="image/*">
+            <label for="fotoPerfil" class="label-upload">Carregar nova foto</label>
+
+            <h2>Nome do Pesquisador</h2>
+            <p><strong>Formação:</strong> Biologia</p>
+            <p><strong>Profissão:</strong> Pesquisador</p>
+            <p><strong>Interesses:</strong> Botânica, Ecologia, Conservação</p>
+        </aside>
+
+        <!-- Artigos publicados -->
+        <section class="artigos">
+            <h3>Artigos Publicados</h3>
+            <article>
+                <h4>Estudo sobre plantas medicinais</h4>
+                <p>Resumo do artigo...</p>
+            </article>
+            <article>
+                <h4>Conservação da Mata Atlântica</h4>
+                <p>Resumo do artigo...</p>
+            </article>
+        </section>
+
+        <!-- Plantas cadastradas -->
+        <aside class="plantas">
+            <h3>Plantas Catalogadas</h3>
+            <ul>
+                <li>Orquídea - 2024</li>
+                <li>Ipê Amarelo - 2025</li>
+                <li>Samambaia - 2026</li>
+            </ul>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Herbário Virtual Freesia</p>
+    </footer>
+
+    <!-- Script para preview da foto -->
+    <script>
+        const input = document.getElementById('fotoPerfil');
+        const preview = document.getElementById('preview');
+
+        input.addEventListener('change', () => {
+            const file = input.files[0];
+            if (file) {
+                preview.src = URL.createObjectURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
