@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR" id="sobre">
 <head>
-    <link rel="icon" type="image/png" href="./IMG/faviconfreesiaroxo.png">
     <meta charset="UTF-8">
     <title>Sobre - Freesia</title>
+    <link rel="icon" type="image/png" href="./IMG/faviconfreesiaroxo.png">
+
+    <!-- CSS global -->
     <link rel="stylesheet" href="./ScriptCSS/style.css">
+
+    <!-- CSS específico da página Sobre -->
+    <link rel="stylesheet" href="./ScriptCSS/sobre.css">
+
+    <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
@@ -24,19 +31,19 @@
     </header>
 
     <main>
-        <h2>SOBRE NOSSO O PROJETO</h2>
+        <h2>SOBRE NOSSO PROJETO</h2>
         <p>
            Somos três mulheres inseridas na área da programação e decidimos unir nossos conhecimentos tecnológicos à ciência para criar o Herbário Virtual Freesia. A proposta nasceu da necessidade de tornar o estudo 
-        da Botânica mais acessível, dinâmico e próximo da realidade das novas gerações.
-        O projeto busca democratizar o acesso ao conhecimento científico, valorizando a biodiversidade e incentivando a educação ambiental. 
-        Por meio de uma plataforma interativa, oferecemos recursos como filtros de pesquisa, mecanismos de identificação de espécies e conteúdos educativos, 
-        que tornam o aprendizado mais envolvente e significativo.
-        Nosso trabalho está alinhado aos Objetivos de Desenvolvimento Sustentável da ONU, reforçando o compromisso com
-        uma sociedade mais consciente e sustentável:
+           da Botânica mais acessível, dinâmico e próximo da realidade das novas gerações.
         </p>
         <p>
-            Nosso projeto valoriza a biodiversidade e incentiva a educação ambiental, 
-            alinhando-se aos <strong>Objetivos de Desenvolvimento Sustentável da ONU</strong>:
+           O projeto busca democratizar o acesso ao conhecimento científico, valorizando a biodiversidade e incentivando a educação ambiental. 
+           Por meio de uma plataforma interativa, oferecemos recursos como filtros de pesquisa, mecanismos de identificação de espécies e conteúdos educativos, 
+           que tornam o aprendizado mais envolvente e significativo.
+        </p>
+        <p>
+           Nosso trabalho está alinhado aos Objetivos de Desenvolvimento Sustentável da ONU, reforçando o compromisso com
+           uma sociedade mais consciente e sustentável:
         </p>
         <div class="highlight">
             <p><strong>ODS 4</strong> – Educação de qualidade e inclusiva</p>
@@ -48,85 +55,78 @@
             que aproxima jovens e comunidade da Botânica por meio de recursos interativos 
             como filtros de pesquisa, identificação de espécies e conteúdos educativos.
         </p>
+
+        <!-- Card interativo -->
+        <div class="card">
+          <div class="card-inner">
+            <!-- Frente: só a foto -->
+            <div class="card-front">
+              <img src="./IMG/nós.png" alt="Equipe Herbário Virtual">
+            </div>
+            <!-- Verso: só o texto -->
+            <div class="card-back">
+              <h3>Sobre Nós</h3>
+              <p>
+                Somos Ana Julia, Camila e Nicoly, estudantes que decidiram unir
+                tecnologia e botânica para criar o Herbário Virtual. Nosso interesse
+                pela programação surgiu da vontade de inovar e tornar a ciência mais
+                acessível. Queremos seguir carreiras ligadas à tecnologia e educação,
+                sempre conectando conhecimento científico com impacto social.
+              </p>
+            </div>
+          </div>
+        </div>
     </main>
 
     <footer>
-            <div id="Agradecimentos">
-                <h1>Agradecimentos</h1>
-                <div id="ConteudoRodape">
-                    <div id="Orientacao">
-                        <h3>Orientação</h3>
-
-                        <div class="Professor">
-                            <h4>Prof. Lucas G. S. de Souza (Orientador)</h4>
-
-                            <a href="#">
-                                <img src="./IMG/icone linkedin.png" alt="LinkedIn Prof. Lucas G. S. de Souza">
-                            </a>
-                        </div>
-
-                        <div class="Professor">
-                            <h4>Prof. Janaine K. Hammes (Coorientadora)</h4>
-
-                            <a href="#">
-                                <img src="./IMG/icone linkedin.png" alt="LinkedIn Janaine K. Hammes">
-                            </a>
-                        </div>
-
-                        <div id="ProjetoRelacionado">
-                            <h3>Projetos Relacionados</h3>
+        <div id="Agradecimentos">
+            <h1>Agradecimentos</h1>
+            <div id="ConteudoRodape">
+                <div id="Orientacao">
+                    <h3>Orientação</h3>
+                    <div class="Professor">
+                        <h4>Prof. Lucas G. S. de Souza (Orientador)</h4>
+                        <a href="#"><img src="./IMG/icone linkedin.png" alt="LinkedIn Prof. Lucas G. S. de Souza"></a>
+                    </div>
+                    <div class="Professor">
+                        <h4>Prof. Janaine K. Hammes (Coorientadora)</h4>
+                        <a href="#"><img src="./IMG/icone linkedin.png" alt="LinkedIn Janaine K. Hammes"></a>
+                    </div>
+                    <div id="ProjetoRelacionado">
+                        <h3>Projetos Relacionados</h3>
+                    </div>
+                </div>
+                <div id="Instituicoes">
+                    <h3>Apoiadores</h3>
+                    <div class="Instituicao">
+                        <h4>Academia Donaduzzi</h4>
+                        <div class="Icones">
+                            <a href="#"><img src="./IMG/icone instagram.png"></a>
+                            <a href="#"><img src="./IMG/icone de site.png"></a>
                         </div>
                     </div>
-
-                    <div id="Instituicoes">
-                        <h3>Apoiadores</h3>
-
-                        <div class="Instituicao">
-                            <h4>Academia Donaduzzi</h4>
-
-                            <div class="Icones">
-                                <a href="#">
-                                    <img src="./IMG/icone instagram.png">
-                                </a>
-
-                                <a href="#">
-                                    <img src="./IMG/icone de site.png">
-                                </a>
-                            </div>
-
+                    <div class="Instituicao">
+                        <h4>Colégio Donaduzzi</h4>
+                        <div class="Icones">
+                            <a href="#"><img src="./IMG/icone instagram.png"></a>
+                            <a href="#"><img src="./IMG/icone de site.png"></a>
                         </div>
-
-                        <div class="Instituicao">
-                            <h4>Colégio Donaduzzi</h4>
-
-                            <div class="Icones">
-                                <a href="#">
-                                    <img src="./IMG/icone instagram.png">
-                                </a>
-
-                                <a href="#">
-                                    <img src="./IMG/icone de site.png">
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="Instituicao">
-                            <h4>BIOPARK Educação</h4>
-
-                            <div class="Icones">
-                                <a href="#">
-                                    <img src="./IMG/icone instagram.png">
-                                </a>
-
-                                <a href="#">
-                                    <img src="./IMG/icone de site.png">
-                                </a>
-                            </div>
+                    </div>
+                    <div class="Instituicao">
+                        <h4>BIOPARK Educação</h4>
+                        <div class="Icones">
+                            <a href="#"><img src="./IMG/icone instagram.png"></a>
+                            <a href="#"><img src="./IMG/icone de site.png"></a>
                         </div>
                     </div>
                 </div>
             </div>
-            <p>&copy; 2026 Herbário Virtual</p>
-        </footer>
+        </div>
+        <p>&copy; 2026 Herbário Virtual</p>
+    </footer>
+
+    <!-- Script -->
+    <script src="./ScriptJS/sobre.js"></script>
 </body>
 </html>
+
