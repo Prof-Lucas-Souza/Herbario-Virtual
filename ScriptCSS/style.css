@@ -1,3 +1,5 @@
+
+
 /* =========================================
    CONFIGURAÇÕES GERAIS
 ========================================= */
@@ -14,7 +16,7 @@ body {
 }
 
 body {
-    background-color: #fffeed;
+    background-image: url(../IMG/background.png);
     font-family: Arial, sans-serif;
     color: #000000;
 }
@@ -26,28 +28,17 @@ body {
 
 header {
     width: 100%;
-    min-height: 300px; /* altura mínima para mostrar bem a imagem */
-    background-image: url('../IMG/image\ \(4\).png');
+    min-height: 450px; /* altura mínima para mostrar bem a imagem */
+    background-image: url('../IMG/cabeçalho.png');
     background-size: cover;       /* ocupa todo o espaço */
     background-position: center;    /* centraliza a imagem */
     background-repeat: no-repeat;   /* evita repetição */
     text-align: center;
     position: relative;
-    border-bottom: 2px solid #dcebd8; /* linha verde discreta */
+    border-bottom: 2px solid #a4d796; /* linha verde discreta */
 }
 
-/* =========================================
-   TÍTULO PRINCIPAL
-========================================= */
 
-header h1 {
-    font-family: 'Cinzel Decorative', serif;
-    font-size: 64px;
-    color: #edfeee;
-    margin: 10px 0;
-    position: relative; /* mantém o texto acima da imagem */
-    z-index: 2;
-}
 
 /* =========================================
    TÍTULOS SECUNDÁRIOS
@@ -138,7 +129,7 @@ section p {
 ========================================= */
 
 .highlight {
-    background-color: rgb(255, 250, 205);
+    background-color: rgb(252, 254, 214);
     padding: 15px;
     border-left: 5px solid rgb(105, 193, 105);
     margin: 20px 0;
@@ -227,7 +218,7 @@ footer h4 {
 footer > p {
     margin-top: 35px;
     text-align: center;
-    color: #555;
+    color: #ffffff;
     font-size: 0.9em;
 }
 
@@ -291,3 +282,4 @@ footer::before {
         font-size: 4.5em;
     }
 }
+
