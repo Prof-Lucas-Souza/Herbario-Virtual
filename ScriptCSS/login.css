@@ -6,6 +6,12 @@
     min-height: 70vh;
 }
 
+body {
+    background-image: url(../IMG/background.png);
+    font-family: Arial, sans-serif;
+    color: #000000;
+}
+
 /* Formulário */
 .login-form {
     width: 100%;
