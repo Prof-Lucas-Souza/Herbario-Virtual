@@ -1,5 +1,152 @@
 /* ==========================================
+   FORMULÁRIO DE /* ==========================================
    FORMULÁRIO DE CADASTRO
+========================================== */
+.card-form {
+    width: 95%;
+    max-width: 900px;
+    margin: 15px auto;
+    padding: 40px;
+    background: #ffffff;
+    border: 1px solid #abecae;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.10);
+}
+
+/* ==========================================
+   TÍTULO
+========================================== */
+.card-form h2 {
+    text-align: center;
+    color: rgb(106,193,105);
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-family: 'Cinzel Decorative', serif;
+}
+
+/* ==========================================
+   RÓTULOS
+========================================== */
+.card-form label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* ==========================================
+   CAMPOS
+========================================== */
+.card-form input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: .2s;
+}
+.card-form input:focus {
+    outline: none;
+    border-color: rgb(106,193,105);
+    box-shadow: 0 0 5px rgba(106,193,105,.35);
+}
+
+/* Placeholder */
+.card-form input::placeholder {
+    color: #999;
+}
+
+/* ==========================================
+   BOTÕES COM FUNDO ANIMADO
+========================================== */
+.botoes {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.botoes button {
+    flex: 1;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    z-index: 1;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.4s ease, border-color 0.4s ease;
+}
+
+/* Fundo animado */
+.botoes button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 100%;
+
+    background: #fff; /* fundo branco no hover */
+    border-radius: 10px;
+
+    z-index: -1;
+    transition: width 0.4s ease;
+}
+
+/* Botão salvar */
+.botoes button[type="submit"] {
+    background: #9FBF7F; /* verde padrão */
+    color: #ffffff;
+    border: 2px solid #9FBF7F;
+}
+.botoes button[type="submit"]:hover {
+    color: #9FBF7F; /* texto verde */
+    border-color: #9FBF7F;
+}
+.botoes button[type="submit"]:hover::before {
+    width: 100%;
+}
+
+/* Botão limpar */
+.botoes button[type="reset"] {
+    background: #9FBF7F;
+    color: #ffffff;
+    border: 2px solid #9FBF7F;
+}
+.botoes button[type="reset"]:hover {
+    color: #9FBF7F;
+    border-color: #9FBF7F;
+}
+.botoes button[type="reset"]:hover::before {
+    width: 100%;
+}
+
+/* ==========================================
+   MENSAGEM
+========================================== */
+#msg {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    min-height: 22px;
+}
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+@media (max-width: 700px) {
+    .card-form {
+        padding: 25px;
+    }
+    .botoes {
+        flex-direction: column;
+    }
+}
+CADASTRO
 ========================================== */
 .card-form {
     width: 95%;
