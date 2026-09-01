@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <link rel="icon" type="image/png" href="./IMG/faviconfreesiaroxo.png">
     <meta charset="UTF-8">
     <title>Perfil - Freesia</title>
+    <link rel="icon" type="image/png" href="./IMG/faviconfreesiaroxo.png">
     <link rel="stylesheet" href="./ScriptCSS/style.css">
     <link rel="stylesheet" href="./ScriptCSS/perfil.css">
+    <!-- Fontes -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Gwendolyn&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Gravitas+One&family=Gwendolyn:wght@400;700&family=Henny+Penny&family=Mea+Culpa&family=Oi&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -24,34 +24,21 @@
 
     <main class="container">
         <!-- Informações pessoais -->
-        <aside class="info-pessoal">
-            <!-- Container circular com borda verde -->
+        <section class="info-pessoal">
+            <!-- Foto de perfil -->
             <div class="foto-container">
-                <!-- Imagem só aparece se for carregada -->
-                <img id="preview" src="" alt="Foto do pesquisador">
+                <img id="preview" src="" alt="">
             </div>
 
-            <!-- Botão de upload estilizado -->
+            <!-- Upload de foto -->
             <input type="file" id="fotoPerfil" accept="image/*">
             <label for="fotoPerfil" class="label-upload">Carregar nova foto</label>
 
-            <h2>Nome do Pesquisador</h2>
-            <p><strong>Formação:</strong> Biologia</p>
-            <p><strong>Profissão:</strong> Pesquisador</p>
-            <p><strong>Interesses:</strong> Botânica, Ecologia, Conservação</p>
-        </aside>
+            <!-- Nome de usuário (vem do cadastro) -->
+            <h2 id="usernameDisplay"></h2>
 
-        <!-- Artigos publicados -->
-        <section class="artigos">
-            <h3>Artigos Publicados</h3>
-            <article>
-                <h4>Estudo sobre plantas medicinais</h4>
-                <p>Resumo do artigo...</p>
-            </article>
-            <article>
-                <h4>Conservação da Mata Atlântica</h4>
-                <p>Resumo do artigo...</p>
-            </article>
+            <!-- Mini bio estilo Instagram -->
+            <p id="bioPreview"></p>
         </section>
 
         <!-- Plantas cadastradas -->
@@ -66,11 +53,55 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Herbário Virtual Freesia</p>
+        <div id="Agradecimentos">
+            <h1>Agradecimentos</h1>
+            <div id="ConteudoRodape">
+                <div id="Orientacao">
+                    <h3>Orientação</h3>
+                    <div class="Professor">
+                        <h4>Prof. Lucas G. S. de Souza (Orientador)</h4>
+                        <a href="#"><img src="./IMG/icone linkedin.png" alt="LinkedIn Prof. Lucas G. S. de Souza"></a>
+                    </div>
+                    <div class="Professor">
+                        <h4>Prof. Janaine K. Hammes (Coorientadora)</h4>
+                        <a href="#"><img src="./IMG/icone linkedin.png" alt="LinkedIn Janaine K. Hammes"></a>
+                    </div>
+                    <div id="ProjetoRelacionado">
+                        <h3>Projetos Relacionados</h3>
+                    </div>
+                </div>
+                <div id="Instituicoes">
+                    <h3>Apoiadores</h3>
+                    <div class="Instituicao">
+                        <h4>Academia Donaduzzi</h4>
+                        <div class="Icones">
+                            <a href="#"><img src="./IMG/icone instagram.png"></a>
+                            <a href="#"><img src="./IMG/icone de site.png"></a>
+                        </div>
+                    </div>
+                    <div class="Instituicao">
+                        <h4>Colégio Donaduzzi</h4>
+                        <div class="Icones">
+                            <a href="#"><img src="./IMG/icone instagram.png"></a>
+                            <a href="#"><img src="./IMG/icone de site.png"></a>
+                        </div>
+                    </div>
+                    <div class="Instituicao">
+                        <h4>BIOPARK Educação</h4>
+                        <div class="Icones">
+                            <a href="#"><img src="./IMG/icone instagram.png"></a>
+                            <a href="#"><img src="./IMG/icone de site.png"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2026 Herbário Virtual</p>
     </footer>
 
-    <!-- Script para preview da foto -->
+    <!-- Scripts -->
     <script>
+        // Preview da foto
         const input = document.getElementById('fotoPerfil');
         const preview = document.getElementById('preview');
 
@@ -80,6 +111,22 @@
                 preview.src = URL.createObjectURL(file);
             }
         });
+
+        // Simulação: nome de usuário e bio vindos do cadastro
+        const usernameDisplay = document.getElementById('usernameDisplay');
+        const bioPreview = document.getElementById('bioPreview');
+
+        // Exemplo: esses dados viriam do cadastro/login
+        const usuario = {
+            nomeUsuario: "ana_julia",
+            bio: "Me chamo Ana Júlia, sou estudante do ensino médio e gosto muito da parte morfológica da botânica."
+        };
+
+        // Mostra no perfil
+        usernameDisplay.textContent = usuario.nomeUsuario;
+        bioPreview.textContent = usuario.bio;
     </script>
 </body>
 </html>
+
+
