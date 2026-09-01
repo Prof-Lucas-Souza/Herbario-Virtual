@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <link rel="icon" type="image/png" href="./IMG/faviconfreesiaroxo.png">
-        <meta charset="UTF-8">
-        <title>Consulta - Freesia</title>
-        <link rel="stylesheet" href="./ScriptCSS/style.css">
-        <link rel="stylesheet" href="./ScriptCSS/consulta.css">
-        <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Gwendolyn&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Gravitas+One&family=Gwendolyn:wght@400;700&family=Henny+Penny&family=Mea+Culpa&family=Oi&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <header>
-            <nav>
+<head>
+    <link rel="icon" type="image/png" href="./IMG/faviconfreesiaroxo.png">
+    <meta charset="UTF-8">
+    <title>Consulta - Freesia</title>
+    <link rel="stylesheet" href="./ScriptCSS/style.css">
+    <link rel="stylesheet" href="./ScriptCSS/consulta.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gwendolyn&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Gravitas+One&family=Gwendolyn:wght@400;700&family=Henny+Penny&family=Mea+Culpa&family=Oi&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
             <a href="index.html">Início</a>
             <a href="sobre.html">Sobre o Projeto</a>
             <a href="consultapublica.html" class="ativo">Consulta Pública</a>
@@ -20,108 +20,85 @@
             <a href="perfil.html">Perfil</a>
             <a href="login.html">Login</a>
         </nav>
-        </header>
-        <main>
-            <h2>Consulta Pública do Herbário Virtual</h2>
-            <form id="formPesquisa" method="get">
-                <label for="busca">Digite o nome da espécie:</label><br>
-                <input type="text" id="busca" name="busca" placeholder="Ex: Freesia refracta"><br><br>
-                <fieldset>
-                    <legend>Filtros de pesquisa</legend>
-                    <label><input type="checkbox" name="duplicatas"> Mostrar Duplicatas</label><br>
-                    <label><input type="checkbox" name="indeterminados"> Espécimes Indeterminados</label><br>
-                    <label><input type="checkbox" name="imagens"> Apenas com Imagens</label><br>
-                    <label><input type="checkbox" name="coordenada"> Apenas com Coordenada</label>
-                </fieldset><br>
-                <label for="quantidade">Espécimes por página:</label>
-                <select id="quantidade" name="quantidade">
-                    <option value="10">10</option>
-                    <option value="20" selected>20</option>
-                    <option value="50">50</option>
-                </select><br><br>
+    </header>
+    <main>
+        <h2>Consulta Pública do Herbário Virtual</h2>
+        <form id="formPesquisa" method="get">
+            <label for="busca">Digite o nome científico ou o nome popular da espécie:</label><br>
+            <input type="text" id="busca" name="busca" placeholder="Ex: Freesia refracta"><br><br>
+            <fieldset>
+                <legend>Filtros de pesquisa</legend>
+                <label><input type="checkbox" name="duplicatas"> Mostrar Duplicatas</label><br>
+                <label><input type="checkbox" name="indeterminados"> Espécimes Indeterminados</label><br>
+                <label><input type="checkbox" name="imagens"> Apenas com Imagens</label><br>
+                <label><input type="checkbox" name="coordenada"> Apenas com Coordenada</label>
+            </fieldset><br>
+            <label for="quantidade">Espécimes por página:</label>
+            <select id="quantidade" name="quantidade">
+                <option value="10">10</option>
+                <option value="20" selected>20</option>
+                <option value="50">50</option>
+            </select><br><br>
+            
+            <!-- Botões corrigidos dentro da div .botoes -->
+            <div class="botoes">
                 <button type="submit">Consultar</button>
                 <button type="reset">Limpar</button>
-            </form>
-            <div id="resultado"></div>
-        </main>
-        <footer>
-            <div id="Agradecimentos">
-                <h1>Agradecimentos</h1>
-                <div id="ConteudoRodape">
-                    <div id="Orientacao">
-                        <h3>Orientação</h3>
-
-                        <div class="Professor">
-                            <h4>Prof. Lucas G. S. de Souza (Orientador)</h4>
-
-                            <a href="#">
-                                <img src="./IMG/icone linkedin.png" alt="LinkedIn Prof. Lucas G. S. de Souza">
-                            </a>
-                        </div>
-
-                        <div class="Professor">
-                            <h4>Prof. Janaine K. Hammes (Coorientadora)</h4>
-
-                            <a href="#">
-                                <img src="./IMG/icone linkedin.png" alt="LinkedIn Janaine K. Hammes">
-                            </a>
-                        </div>
-
-                        <div id="ProjetoRelacionado">
-                            <h3>Projetos Relacionados</h3>
+            </div>
+        </form>
+        <div id="resultado"></div>
+    </main>
+    <footer>
+        <div id="Agradecimentos">
+            <h1>Agradecimentos</h1>
+            <div id="ConteudoRodape">
+                <div id="Orientacao">
+                    <h3>Orientação</h3>
+                    <div class="Professor">
+                        <h4>Prof. Lucas G. S. de Souza (Orientador)</h4>
+                        <a href="#">
+                            <img src="./IMG/icone linkedin.png" alt="LinkedIn Prof. Lucas G. S. de Souza">
+                        </a>
+                    </div>
+                    <div class="Professor">
+                        <h4>Prof. Janaine K. Hammes (Coorientadora)</h4>
+                        <a href="#">
+                            <img src="./IMG/icone linkedin.png" alt="LinkedIn Janaine K. Hammes">
+                        </a>
+                    </div>
+                    <div id="ProjetoRelacionado">
+                        <h3>Projetos Relacionados</h3>
+                    </div>
+                </div>
+                <div id="Instituicoes">
+                    <h3>Apoiadores</h3>
+                    <div class="Instituicao">
+                        <h4>Academia Donaduzzi</h4>
+                        <div class="Icones">
+                            <a href="#"><img src="./IMG/icone instagram.png"></a>
+                            <a href="#"><img src="./IMG/icone de site.png"></a>
                         </div>
                     </div>
-
-                    <div id="Instituicoes">
-                        <h3>Apoiadores</h3>
-
-                        <div class="Instituicao">
-                            <h4>Academia Donaduzzi</h4>
-
-                            <div class="Icones">
-                                <a href="#">
-                                    <img src="./IMG/icone instagram.png">
-                                </a>
-
-                                <a href="#">
-                                    <img src="./IMG/icone de site.png">
-                                </a>
-                            </div>
-
+                    <div class="Instituicao">
+                        <h4>Colégio Donaduzzi</h4>
+                        <div class="Icones">
+                            <a href="#"><img src="./IMG/icone instagram.png"></a>
+                            <a href="#"><img src="./IMG/icone de site.png"></a>
                         </div>
-
-                        <div class="Instituicao">
-                            <h4>Colégio Donaduzzi</h4>
-
-                            <div class="Icones">
-                                <a href="#">
-                                    <img src="./IMG/icone instagram.png">
-                                </a>
-
-                                <a href="#">
-                                    <img src="./IMG/icone de site.png">
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="Instituicao">
-                            <h4>BIOPARK Educação</h4>
-
-                            <div class="Icones">
-                                <a href="#">
-                                    <img src="./IMG/icone instagram.png">
-                                </a>
-
-                                <a href="#">
-                                    <img src="./IMG/icone de site.png">
-                                </a>
-                            </div>
+                    </div>
+                    <div class="Instituicao">
+                        <h4>BIOPARK Educação</h4>
+                        <div class="Icones">
+                            <a href="#"><img src="./IMG/icone instagram.png"></a>
+                            <a href="#"><img src="./IMG/icone de site.png"></a>
                         </div>
                     </div>
                 </div>
             </div>
-            <p>&copy; 2026 Herbário Virtual</p>
-        </footer>
-        <script src="./ScriptJS/consulta.js"></script>
-    </body>
+        </div>
+        <p>&copy; 2026 Herbário Virtual</p>
+    </footer>
+    <script src="./ScriptJS/consulta.js"></script>
+</body>
 </html>
+
