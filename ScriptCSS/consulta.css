@@ -56,10 +56,18 @@
    BOTÕES COM FUNDO ANIMADO
 ========================================== */
 .botoes {
-    background-color: #9FBF7F;
-    display: flex;
-    gap: 15px;
-    margin-top: 30px;
+    position: relative;
+    display: inline-block;
+    padding: 7px 10px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #66bb6a;
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 0.4s ease;
 }
 
 .botoes button {
@@ -68,7 +76,7 @@
     display: inline-block;
     overflow: hidden;
     z-index: 1;
-    padding: 14px;
+    padding: 10px;
     border-radius: 10px;
     font-size: 16px;
     cursor: pointer;
@@ -82,13 +90,10 @@
     position: absolute;
     top: 0;
     left: 0;
-
     width: 0;
     height: 100%;
-
-    background: #ffffff; /* fundo branco no hover */
-    border-radius: 10px;
-
+    background-color: #ffffff;
+    border-radius: 8px;
     z-index: -1;
     transition: width 0.4s ease;
 }
@@ -113,7 +118,7 @@
     width: 300px;   /* mais larguinho */
     min-height: 320px; /* altura mínima */
     padding: 20px;
-    background-image: url(../IMG/image\ \(2\).png);
+    background-image: url(../IMG/image.png);
     border: 2px solid #53985a77; /* borda verde clara */
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(83, 187, 76, 0.427);
