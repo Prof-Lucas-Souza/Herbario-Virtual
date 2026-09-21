@@ -22,11 +22,12 @@
     <header>
         <nav>
             <a href="index.html">Início</a>
-            <a href="sobre.html" class="ativo">Sobre o Projeto</a>
+            <a href="sobre.html">Sobre o Projeto</a>
             <a href="consultapublica.html">Consulta Pública</a>
-            <a href="cadastro.html">Cadastro de Coleta</a>
-            <a href="perfil.html">Perfil</a>
-            <a href="login.html">Login</a>
+            <a href="cadastro.html" id="menuCadastro">Cadastro de Coleta</a>
+            <a href="perfil.html" id="menuPerfil">Perfil</a>
+            <a href="login.html" id="menuLogin">Login</a>
+            <a href="#" id="menuSair" onclick="sairDaConta(); return false;">Sair</a>
         </nav>
     </header>
 
@@ -67,11 +68,13 @@
             <div class="card-back">
               <h3>Sobre Nós</h3>
               <p>
-                Somos Ana Julia, Camila e Nicoly, estudantes que decidiram unir
-                tecnologia e botânica para criar o Herbário Virtual. Nosso interesse
-                pela programação surgiu da vontade de inovar e tornar a ciência mais
-                acessível. Queremos seguir carreiras ligadas à tecnologia e educação,
-                sempre conectando conhecimento científico com impacto social.
+                Somos três autoras e estudantes que decidiram transformar nossa curiosidade pela 
+                Botânica em um projeto tecnológico. Em meio a códigos, pesquisas, testes e muitos 
+                desafios, encontramos na programação uma forma de criar, inovar e compartilhar 
+                conhecimento. O Freesia representa não apenas o resultado do nosso trabalho, mas 
+                também a nossa trajetória no mundo da tecnologia, mostrando que podemos ocupar esse 
+                espaço, desenvolver soluções e transformar ideias em realidade. Entre flores e códigos, 
+                construímos juntas uma experiência que une ciência, criatividade e tecnologia.
               </p>
             </div>
           </div>
@@ -127,6 +130,8 @@
 
     <!-- Script -->
     <script src="./ScriptJS/sobre.js"></script>
+    <script src="./ScriptJS/sessao.js"></script>
+    <script src="./ScriptJS/menu.js"></script>
 </body>
 </html>
 
