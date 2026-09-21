@@ -1,21 +1,48 @@
-const form = document.querySelector(".login-form");
+/* =========================================
+   FREESIA
+   SISTEMA DE LOGIN
+========================================= */
 
-// URL DO SEU WEB APP DO GOOGLE APPS SCRIPT
+// URL DO WEB APP DO GOOGLE APPS SCRIPT
 const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbytxMrzTl5QdungjAlfKt6FQ5lAmcaGlmAzzRiiAU5j25srhW-0QwZXIOgdKvcmJVi7/exec";
 
-form.addEventListener("submit", async (event) => {
+
+const form = document.querySelector(".login-form");
+
+
+form.addEventListener("submit", async function (event) {
 
     event.preventDefault();
 
-    const usuarioDigitado = document.getElementById("usuario").value.trim();
-    const senhaDigitada = document.getElementById("senha").value.trim();
+
+    // =========================================
+    // PEGAR DADOS DO FORMULÁRIO
+    // =========================================
+
+    const usuarioDigitado =
+        document.getElementById("usuario").value.trim();
+
+    const senhaDigitada =
+        document.getElementById("senha").value.trim();
+
+
+    // =========================================
+    // VERIFICAR CAMPOS
+    // =========================================
 
     if (!usuarioDigitado || !senhaDigitada) {
-        alert("Preencha usuário e senha.");
+
+        alert("Preencha o usuário e a senha.");
+
         return;
     }
 
+
     try {
+
+        // =========================================
+        // PREPARAR DADOS
+        // =========================================
 
         const dados = new URLSearchParams();
 
@@ -23,44 +50,112 @@ form.addEventListener("submit", async (event) => {
         dados.append("usuario", usuarioDigitado);
         dados.append("senha", senhaDigitada);
 
+
+        // =========================================
+        // ENVIAR PARA O GOOGLE APPS SCRIPT
+        // =========================================
+
         const resposta = await fetch(URL_SCRIPT, {
+
             method: "POST",
+
             body: dados
+
         });
 
+
+        // =========================================
+        // VERIFICAR RESPOSTA HTTP
+        // =========================================
+
         if (!resposta.ok) {
-            throw new Error("Erro ao conectar com o servidor.");
+
+            throw new Error(
+                "Erro HTTP: " + resposta.status
+            );
+
         }
 
-        const resultado = await resposta.json();
 
-        console.log("Resposta do servidor:", resultado);
+        // =========================================
+        // CONVERTER RESPOSTA PARA JSON
+        // =========================================
 
-        if (resultado.sucesso) {
+        const resultado =
+            await resposta.json();
 
-            // Salva os dados do usuário na sessão do navegador
-            sessionStorage.setItem(
-                "usuario",
-                JSON.stringify(resultado.usuario)
+
+        console.log(
+            "Resposta do Apps Script:",
+            resultado
+        );
+
+
+        // =========================================
+        // LOGIN BEM-SUCEDIDO
+        // =========================================
+
+        if (resultado.sucesso === true) {
+
+            console.log(
+                "Usuário autenticado:",
+                resultado.usuario
             );
+
+
+            // =========================================
+            // INICIAR SESSÃO
+            // =========================================
+
+            const sessaoIniciada =
+                iniciarSessao(resultado.usuario);
+
+
+            if (!sessaoIniciada) {
+
+                alert(
+                    "O login foi realizado, " +
+                    "mas não foi possível iniciar a sessão."
+                );
+
+                return;
+            }
+
+
+            // =========================================
+            // REDIRECIONAR
+            // =========================================
 
             alert("Login realizado com sucesso!");
 
             window.location.href = "perfil.html";
 
+
         } else {
 
-            alert(resultado.mensagem || "Usuário ou senha estão incorretos!");
+            // =========================================
+            // LOGIN NEGADO
+            // =========================================
+
+            alert(
+                resultado.mensagem ||
+                "Usuário ou senha estão incorretos!"
+            );
 
         }
 
+
     } catch (erro) {
 
-        console.error("Erro no login:", erro);
+        console.error(
+            "Erro ao realizar login:",
+            erro
+        );
+
 
         alert(
-            "Não foi possível realizar o login. " +
-            "Verifique sua conexão e tente novamente."
+            "Não foi possível realizar o login.\n\n" +
+            "Verifique a conexão com o servidor."
         );
 
     }
