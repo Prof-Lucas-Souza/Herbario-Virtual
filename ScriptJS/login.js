@@ -3,7 +3,7 @@
    SISTEMA DE LOGIN
 ========================================= */
 
-alert("NOVO LOGIN.JS ESTÁ SENDO EXECUTADO!");
+
 
 // URL DO WEB APP DO GOOGLE APPS SCRIPT
 const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbytxMrzTl5QdungjAlfKt6FQ5lAmcaGlmAzzRiiAU5j25srhW-0QwZXIOgdKvcmJVi7/exec";
@@ -51,6 +51,13 @@ form.addEventListener("submit", async function (event) {
         dados.append("action", "login");
         dados.append("usuario", usuarioDigitado);
         dados.append("senha", senhaDigitada);
+
+         console.log("URL DO APPS SCRIPT:", URL_SCRIPT);
+         console.log("DADOS ENVIADOS:", {
+             action: "login",
+             usuario: usuarioDigitado,
+             senha: senhaDigitada
+         });
 
 
         // =========================================
