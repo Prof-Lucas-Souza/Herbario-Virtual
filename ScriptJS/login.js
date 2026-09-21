@@ -3,6 +3,8 @@
    SISTEMA DE LOGIN
 ========================================= */
 
+alert("NOVO LOGIN.JS ESTÁ SENDO EXECUTADO!");
+
 // URL DO WEB APP DO GOOGLE APPS SCRIPT
 const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbytxMrzTl5QdungjAlfKt6FQ5lAmcaGlmAzzRiiAU5j25srhW-0QwZXIOgdKvcmJVi7/exec";
 
