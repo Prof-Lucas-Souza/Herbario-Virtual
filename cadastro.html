@@ -13,13 +13,14 @@
     <body>
         <header>
             <nav>
-            <a href="index.html">Início</a>
-            <a href="sobre.html">Sobre o Projeto</a>
-            <a href="consultapublica.html">Consulta Pública</a>
-            <a href="cadastro.html" class="ativo">Cadastro de Coleta</a>
-            <a href="perfil.html">Perfil</a>
-            <a href="login.html">Login</a>
-        </nav>
+                <a href="index.html">Início</a>
+                <a href="sobre.html">Sobre o Projeto</a>
+                <a href="consultapublica.html">Consulta Pública</a>
+                <a href="cadastro.html" id="menuCadastro">Cadastro de Coleta</a>
+                <a href="perfil.html" id="menuPerfil">Perfil</a>
+                <a href="login.html" id="menuLogin">Login</a>
+                <a href="#" id="menuSair" onclick="sairDaConta(); return false;">Sair</a>
+            </nav>
         </header>
 
     <main>
@@ -143,5 +144,10 @@
             <p>&copy; 2026 Herbário Virtual</p>
         </footer>
     <script src="./ScriptJS/cadastro.js"></script>
+    <script src="./ScriptJS/sessao.js"></script>
+
+    <script>
+        protegerPagina();
+    </script>
 </body>
 </html>
