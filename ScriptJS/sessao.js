@@ -15,18 +15,31 @@ function iniciarSessao(usuario) {
         return false;
     }
 
-    // Informa que existe um usuário logado
     sessionStorage.setItem("usuarioLogado", "true");
 
-    // Salva os dados do usuário
+    sessionStorage.setItem(
+        "idUsuario",
+        usuario.id || ""
+    );
+
+    sessionStorage.setItem(
+        "loginUsuario",
+        usuario.login || ""
+    );
+
     sessionStorage.setItem(
         "nomeUsuario",
         usuario.nome || ""
     );
 
     sessionStorage.setItem(
-        "usuario",
-        usuario.usuario || ""
+        "nascimentoUsuario",
+        usuario.nascimento || ""
+    );
+
+    sessionStorage.setItem(
+        "idadeUsuario",
+        usuario.idade || ""
     );
 
     sessionStorage.setItem(
@@ -35,15 +48,24 @@ function iniciarSessao(usuario) {
     );
 
     sessionStorage.setItem(
+        "celularUsuario",
+        usuario.celular || ""
+    );
+
+    sessionStorage.setItem(
         "tipoUsuario",
-        usuario.tipo || "usuario"
+        usuario.tipo || ""
+    );
+
+    sessionStorage.setItem(
+        "statusUsuario",
+        usuario.status || ""
     );
 
     console.log("Usuário conectado:", usuario.nome);
 
     return true;
 }
-
 
 /* =========================================
    VERIFICAR SE EXISTE LOGIN
@@ -68,18 +90,26 @@ function obterUsuario() {
 
     return {
 
+        id: sessionStorage.getItem("idUsuario"),
+
+        login: sessionStorage.getItem("loginUsuario"),
+
         nome: sessionStorage.getItem("nomeUsuario"),
 
-        usuario: sessionStorage.getItem("usuario"),
+        nascimento: sessionStorage.getItem("nascimentoUsuario"),
+
+        idade: sessionStorage.getItem("idadeUsuario"),
 
         email: sessionStorage.getItem("emailUsuario"),
 
-        tipo: sessionStorage.getItem("tipoUsuario")
+        celular: sessionStorage.getItem("celularUsuario"),
+
+        tipo: sessionStorage.getItem("tipoUsuario"),
+
+        status: sessionStorage.getItem("statusUsuario")
 
     };
-
 }
-
 
 /* =========================================
    PROTEGER UMA PÁGINA
@@ -127,14 +157,17 @@ function mostrarNomeUsuario(elemento) {
 
 function sairDaConta() {
 
-    // Apaga todas as informações da sessão
     sessionStorage.removeItem("usuarioLogado");
+
+    sessionStorage.removeItem("idUsuario");
+    sessionStorage.removeItem("loginUsuario");
     sessionStorage.removeItem("nomeUsuario");
-    sessionStorage.removeItem("usuario");
+    sessionStorage.removeItem("nascimentoUsuario");
+    sessionStorage.removeItem("idadeUsuario");
     sessionStorage.removeItem("emailUsuario");
+    sessionStorage.removeItem("celularUsuario");
     sessionStorage.removeItem("tipoUsuario");
+    sessionStorage.removeItem("statusUsuario");
 
-    // Volta para o login
     window.location.href = "login.html";
-
 }
