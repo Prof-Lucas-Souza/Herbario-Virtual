@@ -14,9 +14,10 @@
             <a href="index.html">Início</a>
             <a href="sobre.html">Sobre o Projeto</a>
             <a href="consultapublica.html">Consulta Pública</a>
-            <a href="cadastro.html">Cadastro de Coleta</a>
-            <a href="perfil.html">Perfil</a>
-            <a href="login.htm" class="ativo">Login</a>
+            <a href="cadastro.html" id="menuCadastro">Cadastro de Coleta</a>
+            <a href="perfil.html" id="menuPerfil">Perfil</a>
+            <a href="login.html" id="menuLogin">Login</a>
+            <a href="#" id="menuSair" onclick="sairDaConta(); return false;">Sair</a>
         </nav>
     </header>
 
@@ -43,8 +44,9 @@
         <p>&copy; 2026 Herbário Virtual</p>
     </footer>
 
-    <!-- Script externo -->
-    <script src="./ScriptCSS/login.js"></script>
+    <script src="./ScriptJS/sessao.js"></script>
+    <script src="./ScriptJS/login.js"></script>
+    <script src="./ScriptJS/menu.js"></script>
 </body>
 </html>
 
