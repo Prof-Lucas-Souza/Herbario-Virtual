@@ -16,9 +16,10 @@
             <a href="index.html">Início</a>
             <a href="sobre.html">Sobre o Projeto</a>
             <a href="consultapublica.html">Consulta Pública</a>
-            <a href="cadastro.html">Cadastro de Coleta</a>
-            <a href="perfil.html" class="ativo">Perfil</a>
-            <a href="login.html">Login</a>
+            <a href="cadastro.html" id="menuCadastro">Cadastro de Coleta</a>
+            <a href="perfil.html" id="menuPerfil">Perfil</a>
+            <a href="login.html" id="menuLogin">Login</a>
+            <a href="#" id="menuSair" onclick="sairDaConta(); return false;">Sair</a>
         </nav>
     </header>
 
@@ -100,33 +101,80 @@
     </footer>
 
     <!-- Scripts -->
-    <script>
-        // Preview da foto
-        const input = document.getElementById('fotoPerfil');
-        const preview = document.getElementById('preview');
+    <!-- =========================================
+        SESSÃO DO USUÁRIO
+    ========================================= -->
 
-        input.addEventListener('change', () => {
+    <script src="./ScriptJS/sessao.js"></script>
+
+
+    <!-- =========================================
+        CONTROLE DO PERFIL
+    ========================================= -->
+
+    <script>
+
+        // Verifica se existe um usuário logado
+        protegerPagina();
+
+
+        // =========================================
+        // DADOS DO USUÁRIO
+        // =========================================
+
+        const usuario = obterUsuario();
+
+
+        if (usuario) {
+
+            // Nome do usuário
+            const usernameDisplay =
+                document.getElementById("usernameDisplay");
+
+            usernameDisplay.textContent =
+                usuario.nome;
+
+
+            // Bio
+            const bioPreview =
+                document.getElementById("bioPreview");
+
+            bioPreview.textContent =
+                "Usuário cadastrado no Herbário Virtual Freesia.";
+
+        }
+
+
+        // =========================================
+        // PREVISUALIZAÇÃO DA FOTO
+        // =========================================
+
+        const input =
+            document.getElementById("fotoPerfil");
+
+        const preview =
+            document.getElementById("preview");
+
+
+        input.addEventListener("change", function() {
+
             const file = input.files[0];
+
+
             if (file) {
-                preview.src = URL.createObjectURL(file);
+
+                preview.src =
+                    URL.createObjectURL(file);
+
             }
+
         });
 
-        // Simulação: nome de usuário e bio vindos do cadastro
-        const usernameDisplay = document.getElementById('usernameDisplay');
-        const bioPreview = document.getElementById('bioPreview');
-
-        // Exemplo: esses dados viriam do cadastro/login
-        const usuario = {
-            nomeUsuario: "ana_julia",
-            bio: "Me chamo Ana Júlia, sou estudante do ensino médio e gosto muito da parte morfológica da botânica."
-        };
-
-        // Mostra no perfil
-        usernameDisplay.textContent = usuario.nomeUsuario;
-        bioPreview.textContent = usuario.bio;
     </script>
+
+    <script>
+        protegerPagina();
+    </script>
+
 </body>
 </html>
-
-
